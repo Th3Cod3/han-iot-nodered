@@ -8,36 +8,214 @@
         "env": []
     },
     {
-        "id": "2c3a8731a052a5ef",
-        "type": "inject",
-        "z": "9eb2bb2f23cb3479",
+        "id": "07c5521542a8e3a9",
+        "type": "mqtt-broker",
+        "name": "TTN HAN IOT",
+        "broker": "eu1.cloud.thethings.network",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": "",
+        "info": "NNSXS.NALBTOCUGHULGNQMSR3UCILOAFJNYZMN46O7UPA.IDUOKZZOJ3CNXXBYONF6S5RW35WMQOK5F3R7XWPZAB3QXLZIPAVQ"
+    },
+    {
+        "id": "98dc32bf.a043a8",
+        "type": "mqtt-broker",
         "name": "",
-        "props": [
-            {
-                "p": "payload"
+        "broker": "eu1.cloud.thethings.network",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "compatmode": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": "",
+        "info": "han-demo-test-application@ttn\neu1.cloud.thethings.network:1883\nNNSXS.I6YGDQTOPJ2TI4JU2FB63IDSWDG5EDXLS7RONBQ.IHBQ4LV5RZJAI4AQ5NL33NWFEHQO7ZSFOEF2D2FK4SKTCF3QEKSQ"
+    },
+    {
+        "id": "4909b148.906408",
+        "type": "ui_tab",
+        "name": "HAN",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "75740ef3.8dc6d",
+        "type": "ui_group",
+        "name": "han-kiss-04",
+        "tab": "4909b148.906408",
+        "order": 1,
+        "disp": true,
+        "width": 4,
+        "collapse": false
+    },
+    {
+        "id": "0d314ffe413a9eb6",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
             },
-            {
-                "p": "topic",
-                "vt": "str"
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
             }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 160,
-        "y": 140,
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "d835550709e60d14",
+        "type": "MySQLdatabase",
+        "name": "hive_db",
+        "host": "127.0.0.1",
+        "port": "3306",
+        "db": "hive_db",
+        "tz": "",
+        "charset": "UTF8"
+    },
+    {
+        "id": "d80258456b0b2cb2",
+        "type": "mqtt in",
+        "z": "9eb2bb2f23cb3479",
+        "name": "up",
+        "topic": "v3/+/devices/+/up",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "07c5521542a8e3a9",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 230,
+        "y": 100,
         "wires": [
             [
-                "002dff277b2196b1"
+                "b3be766cadc4cb3d"
             ]
         ]
     },
     {
-        "id": "002dff277b2196b1",
+        "id": "a5d2acec1b687dcd",
         "type": "debug",
         "z": "9eb2bb2f23cb3479",
         "name": "debug 1",
@@ -48,8 +226,67 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 620,
-        "y": 160,
+        "x": 880,
+        "y": 100,
         "wires": []
+    },
+    {
+        "id": "c1789bc6bcb64247",
+        "type": "mysql",
+        "z": "9eb2bb2f23cb3479",
+        "mydb": "d835550709e60d14",
+        "name": "hive_db",
+        "x": 700,
+        "y": 100,
+        "wires": [
+            [
+                "a5d2acec1b687dcd"
+            ]
+        ]
+    },
+    {
+        "id": "b3be766cadc4cb3d",
+        "type": "function",
+        "z": "9eb2bb2f23cb3479",
+        "name": "prepare insert query",
+        "func": "const { \n    orientationY: orientation_y,\n    orientationX: orientation_x,\n    weight,\n    activity\n} = msg.payload.uplink_message.decoded_payload;\n\nmsg.payload = {\n    dev_eui: msg.payload.end_device_ids.dev_eui,\n    orientation_y,\n    orientation_x,\n    weight,\n    activity,\n    received_at: new Date(msg.payload.received_at),\n}\n\nmsg.topic = [\n    \"INSERT INTO hive_payloads\",\n    \"(`dev_eui`, `orientation_y`, `orientation_x`, `weight`, `activity`, `received_at`)\",\n    \"VALUES\",\n    \"(:dev_eui, :orientation_y, :orientation_x, :weight, :activity, :received_at);\",\n].join(' ')\n\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 480,
+        "y": 100,
+        "wires": [
+            [
+                "c1789bc6bcb64247"
+            ]
+        ]
+    },
+    {
+        "id": "e0a48c9fbe7a8dac",
+        "type": "inject",
+        "z": "9eb2bb2f23cb3479",
+        "name": "Test MQTT up",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"end_device_ids\":{\"device_id\":\"han-device\",\"application_ids\":{\"application_id\":\"test-app-th3-cod3\"},\"dev_eui\":\"70B3D57ED006B0D7\",\"join_eui\":\"0004A30B001FCC24\",\"dev_addr\":\"260B2833\"},\"correlation_ids\":[\"gs:uplink:01JGVX1Z6X6GC77RDPQTJWN7B1\"],\"received_at\":\"2025-01-05T18:53:50.890713730Z\",\"uplink_message\":{\"session_key_id\":\"AZQ3wxNiBeqT38pZtsoASA==\",\"f_port\":1,\"f_cnt\":1,\"frm_payload\":\"CeQAEFlW\",\"decoded_payload\":{\"activity\":25,\"checksum\":86,\"orientationX\":0,\"orientationY\":121,\"payloadId\":1,\"weight\":13},\"rx_metadata\":[{\"gateway_ids\":{\"gateway_id\":\"han-ese-ttig-19\",\"eui\":\"58A0CBFFFE80221E\"},\"time\":\"2025-01-05T18:53:50.542771100Z\",\"timestamp\":2865301308,\"rssi\":-49,\"channel_rssi\":-49,\"snr\":9.25,\"uplink_token\":\"Ch0KGwoPaGFuLWVzZS10dGlnLTE5EghYoMv//oAiHhC8jqTWChoMCL6q67sGEKr96sYCIOCEkYqyoBE=\",\"received_at\":\"2025-01-05T18:53:50.639478520Z\"}],\"settings\":{\"data_rate\":{\"lora\":{\"bandwidth\":125000,\"spreading_factor\":7,\"coding_rate\":\"4/5\"}},\"frequency\":\"867900000\",\"timestamp\":2865301308,\"time\":\"2025-01-05T18:53:50.542771100Z\"},\"received_at\":\"2025-01-05T18:53:50.686505463Z\",\"consumed_airtime\":\"0.051456s\",\"network_ids\":{\"net_id\":\"000013\",\"ns_id\":\"EC656E0000000181\",\"tenant_id\":\"ttn\",\"cluster_id\":\"eu1\",\"cluster_address\":\"eu1.cloud.thethings.network\"}}}",
+        "payloadType": "json",
+        "x": 210,
+        "y": 180,
+        "wires": [
+            [
+                "b3be766cadc4cb3d"
+            ]
+        ]
     }
 ]
