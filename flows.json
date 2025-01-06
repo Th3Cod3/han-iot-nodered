@@ -40,150 +40,6 @@
         "info": "NNSXS.NALBTOCUGHULGNQMSR3UCILOAFJNYZMN46O7UPA.IDUOKZZOJ3CNXXBYONF6S5RW35WMQOK5F3R7XWPZAB3QXLZIPAVQ"
     },
     {
-        "id": "98dc32bf.a043a8",
-        "type": "mqtt-broker",
-        "name": "",
-        "broker": "eu1.cloud.thethings.network",
-        "port": "1883",
-        "clientid": "",
-        "autoConnect": true,
-        "usetls": false,
-        "compatmode": false,
-        "protocolVersion": "4",
-        "keepalive": "60",
-        "cleansession": true,
-        "autoUnsubscribe": true,
-        "birthTopic": "",
-        "birthQos": "0",
-        "birthPayload": "",
-        "birthMsg": {},
-        "closeTopic": "",
-        "closeQos": "0",
-        "closePayload": "",
-        "closeMsg": {},
-        "willTopic": "",
-        "willQos": "0",
-        "willPayload": "",
-        "willMsg": {},
-        "userProps": "",
-        "sessionExpiry": "",
-        "info": "han-demo-test-application@ttn\neu1.cloud.thethings.network:1883\nNNSXS.I6YGDQTOPJ2TI4JU2FB63IDSWDG5EDXLS7RONBQ.IHBQ4LV5RZJAI4AQ5NL33NWFEHQO7ZSFOEF2D2FK4SKTCF3QEKSQ"
-    },
-    {
-        "id": "4909b148.906408",
-        "type": "ui_tab",
-        "name": "HAN",
-        "icon": "dashboard",
-        "disabled": false,
-        "hidden": false
-    },
-    {
-        "id": "75740ef3.8dc6d",
-        "type": "ui_group",
-        "name": "han-kiss-04",
-        "tab": "4909b148.906408",
-        "order": 1,
-        "disp": true,
-        "width": 4,
-        "collapse": false
-    },
-    {
-        "id": "0d314ffe413a9eb6",
-        "type": "ui_base",
-        "theme": {
-            "name": "theme-light",
-            "lightTheme": {
-                "default": "#0094CE",
-                "baseColor": "#0094CE",
-                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
-                "edited": false
-            },
-            "darkTheme": {
-                "default": "#097479",
-                "baseColor": "#097479",
-                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
-                "edited": false
-            },
-            "customTheme": {
-                "name": "Untitled Theme 1",
-                "default": "#4B7930",
-                "baseColor": "#4B7930",
-                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
-            },
-            "themeState": {
-                "base-color": {
-                    "default": "#0094CE",
-                    "value": "#0094CE",
-                    "edited": false
-                },
-                "page-titlebar-backgroundColor": {
-                    "value": "#0094CE",
-                    "edited": false
-                },
-                "page-backgroundColor": {
-                    "value": "#fafafa",
-                    "edited": false
-                },
-                "page-sidebar-backgroundColor": {
-                    "value": "#ffffff",
-                    "edited": false
-                },
-                "group-textColor": {
-                    "value": "#1bbfff",
-                    "edited": false
-                },
-                "group-borderColor": {
-                    "value": "#ffffff",
-                    "edited": false
-                },
-                "group-backgroundColor": {
-                    "value": "#ffffff",
-                    "edited": false
-                },
-                "widget-textColor": {
-                    "value": "#111111",
-                    "edited": false
-                },
-                "widget-backgroundColor": {
-                    "value": "#0094ce",
-                    "edited": false
-                },
-                "widget-borderColor": {
-                    "value": "#ffffff",
-                    "edited": false
-                },
-                "base-font": {
-                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
-                }
-            },
-            "angularTheme": {
-                "primary": "indigo",
-                "accents": "blue",
-                "warn": "red",
-                "background": "grey",
-                "palette": "light"
-            }
-        },
-        "site": {
-            "name": "Node-RED Dashboard",
-            "hideToolbar": "false",
-            "allowSwipe": "false",
-            "lockMenu": "false",
-            "allowTempTheme": "true",
-            "dateFormat": "DD/MM/YYYY",
-            "sizes": {
-                "sx": 48,
-                "sy": 48,
-                "gx": 6,
-                "gy": 6,
-                "cx": 6,
-                "cy": 6,
-                "px": 0,
-                "py": 0
-            }
-        }
-    },
-    {
         "id": "d835550709e60d14",
         "type": "MySQLdatabase",
         "name": "hive_db",
@@ -192,6 +48,44 @@
         "db": "hive_db",
         "tz": "",
         "charset": "UTF8"
+    },
+    {
+        "id": "ff7b6b4021e042ce",
+        "type": "ui_tab",
+        "name": "Status",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "0eb6b8e2053703cb",
+        "type": "ui_group",
+        "name": "Status page",
+        "tab": "ff7b6b4021e042ce",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "8066acdf4dea3c72",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "7e4eeb9b87d47b8f",
+        "type": "ui_group",
+        "name": "Default",
+        "tab": "8066acdf4dea3c72",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
     },
     {
         "id": "d80258456b0b2cb2",
@@ -215,22 +109,6 @@
         ]
     },
     {
-        "id": "a5d2acec1b687dcd",
-        "type": "debug",
-        "z": "9eb2bb2f23cb3479",
-        "name": "debug 1",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 880,
-        "y": 100,
-        "wires": []
-    },
-    {
         "id": "c1789bc6bcb64247",
         "type": "mysql",
         "z": "9eb2bb2f23cb3479",
@@ -239,9 +117,7 @@
         "x": 700,
         "y": 100,
         "wires": [
-            [
-                "a5d2acec1b687dcd"
-            ]
+            []
         ]
     },
     {
@@ -249,7 +125,7 @@
         "type": "function",
         "z": "9eb2bb2f23cb3479",
         "name": "prepare insert query",
-        "func": "const { \n    orientationY: orientation_y,\n    orientationX: orientation_x,\n    weight,\n    activity\n} = msg.payload.uplink_message.decoded_payload;\n\nmsg.payload = {\n    dev_eui: msg.payload.end_device_ids.dev_eui,\n    orientation_y,\n    orientation_x,\n    weight,\n    activity,\n    received_at: new Date(msg.payload.received_at),\n}\n\nmsg.topic = [\n    \"INSERT INTO hive_payloads\",\n    \"(`dev_eui`, `orientation_y`, `orientation_x`, `weight`, `activity`, `received_at`)\",\n    \"VALUES\",\n    \"(:dev_eui, :orientation_y, :orientation_x, :weight, :activity, :received_at);\",\n].join(' ')\n\n\nreturn msg;",
+        "func": "const { \n    orientationY: orientation_y,\n    orientationX: orientation_x,\n    weight,\n    activity\n} = msg.payload.uplink_message.decoded_payload;\n\nmsg.payload = {\n    dev_eui: msg.payload.end_device_ids.dev_eui,\n    orientation_y,\n    orientation_x,\n    weight,\n    activity,\n    received_at: new Date(msg.payload.received_at),\n}\n\nmsg.topic = [\n    \"INSERT INTO hive_payloads\",\n    \"(`dev_eui`, `orientation_y`, `orientation_x`, `weight`, `activity`, `received_at`)\",\n    \"VALUES\",\n    \"(:dev_eui, :orientation_y, :orientation_x, :weight, :activity, :received_at);\",\n].join(' ');\n\nmsg.id = 'ttn-up';\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -286,6 +162,256 @@
         "wires": [
             [
                 "b3be766cadc4cb3d"
+            ]
+        ]
+    },
+    {
+        "id": "78704572ba92683f",
+        "type": "http response",
+        "z": "9eb2bb2f23cb3479",
+        "name": "",
+        "statusCode": "200",
+        "headers": {},
+        "x": 1540,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "1ea45368694a31a5",
+        "type": "template",
+        "z": "9eb2bb2f23cb3479",
+        "name": "Device page",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "<html>\n\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <link\n      href=\"https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css\"\n      rel=\"stylesheet\"\n    />\n    <script\n      src=\"https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js\"\n    ></script>\n  </head>\n\n  <body>\n    <div class=\"container mx-auto p-4\">\n      <h1 class=\"text-2xl font-bold text-gray-800 dark:text-white\">\n        Device {{ device.dev_eui }}\n      </h1>\n\n      <div class=\"relative overflow-x-auto\">\n        <h2>\n          Last data from device at: {{ device.received_at }}\n        </h2>\n        <div class=\"p-4 bg-white rounded-lg md:p-8 dark:bg-gray-800\" id=\"stats\" role=\"tabpanel\" aria-labelledby=\"stats-tab\">\n            <dl class=\"grid max-w-screen-xl grid-cols-2 gap-8 p-4 mx-auto text-gray-900 sm:grid-cols-3 xl:grid-cols-6 dark:text-white sm:p-8\">\n                <div class=\"flex flex-col items-center justify-center\">\n                    <dt class=\"mb-2 text-3xl font-extrabold\">{{ device.orientation_y }}</dt>\n                    <dd class=\"text-gray-500 dark:text-gray-400\">Orientation Y</dd>\n                </div>\n                <div class=\"flex flex-col items-center justify-center\">\n                    <dt class=\"mb-2 text-3xl font-extrabold\">{{ device.orientation_x }}</dt>\n                    <dd class=\"text-gray-500 dark:text-gray-400\">Orientation X</dd>\n                </div>\n                <div class=\"flex flex-col items-center justify-center\">\n                    <dt class=\"mb-2 text-3xl font-extrabold\">{{ device.weight }} kg</dt>\n                    <dd class=\"text-gray-500 dark:text-gray-400\">Weight</dd>\n                </div>\n                <div class=\"flex flex-col items-center justify-center\">\n                    <dt class=\"mb-2 text-3xl font-extrabold\">{{ device.activity }}</dt>\n                    <dd class=\"text-gray-500 dark:text-gray-400\">Activity</dd>\n                </div>\n            </dl>\n        </div>\n      </div>\n    </div>\n  </body>\n</html>",
+        "output": "str",
+        "x": 1310,
+        "y": 640,
+        "wires": [
+            [
+                "78704572ba92683f"
+            ]
+        ]
+    },
+    {
+        "id": "e44e92022a62df01",
+        "type": "http in",
+        "z": "9eb2bb2f23cb3479",
+        "name": "",
+        "url": "/devices/:device",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 180,
+        "y": 600,
+        "wires": [
+            [
+                "e01c8de9c92fb49c"
+            ]
+        ]
+    },
+    {
+        "id": "f9e8915d9e4ef820",
+        "type": "function",
+        "z": "9eb2bb2f23cb3479",
+        "name": "Get last payload each device",
+        "func": "msg.topic = \"SELECT * FROM `hive_payloads` GROUP BY `dev_eui` ORDER BY `received_at` DESC\";\nmsg.id = 'last-payload-each-device';\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 540,
+        "wires": [
+            [
+                "abfc49e702954b9d"
+            ]
+        ]
+    },
+    {
+        "id": "abfc49e702954b9d",
+        "type": "mysql",
+        "z": "9eb2bb2f23cb3479",
+        "mydb": "d835550709e60d14",
+        "name": "hive_db",
+        "x": 660,
+        "y": 540,
+        "wires": [
+            [
+                "0640f335f9490d05"
+            ]
+        ]
+    },
+    {
+        "id": "8dedda2d39683f9c",
+        "type": "http in",
+        "z": "9eb2bb2f23cb3479",
+        "name": "",
+        "url": "/devices",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 150,
+        "y": 540,
+        "wires": [
+            [
+                "f9e8915d9e4ef820"
+            ]
+        ]
+    },
+    {
+        "id": "6b77450624591411",
+        "type": "template",
+        "z": "9eb2bb2f23cb3479",
+        "name": "Device table",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "<html>\n\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <link\n      href=\"https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css\"\n      rel=\"stylesheet\"\n    />\n    <script\n      src=\"https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js\"\n    ></script>\n  </head>\n\n  <body>\n    <div class=\"container mx-auto p-4\">\n      <h1 class=\"text-2xl font-bold text-gray-800 dark:text-white\">\n        Devices\n      </h1>\n\n      <div class=\"relative overflow-x-auto\">\n        <table\n          class=\"w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400\"\n        >\n          <thead\n            class=\"text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400\"\n          >\n            <tr>\n              <th scope=\"col\" class=\"px-6 py-3\">Device Eui</th>\n              <th scope=\"col\" class=\"px-6 py-3 text-right\">Last payload</th>\n            </tr>\n          </thead>\n          <tbody>\n            {{#devices}}\n              <tr class=\"bg-white border-b dark:bg-gray-800 dark:border-gray-700\">\n                <th\n                  scope=\"row\"\n                  class=\"px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white\"\n                >\n                  <a href=\"/devices/{{dev_eui}}\">\n                    {{dev_eui}}\n                  </a>\n                </th>\n                <td class=\"px-6 py-4 text-right\">{{received_at}}</td>\n              </tr>\n            {{/devices}}\n          </tbody>\n        </table>\n      </div>\n    </div>\n  </body>\n\n</html>",
+        "output": "str",
+        "x": 1070,
+        "y": 540,
+        "wires": [
+            [
+                "78704572ba92683f"
+            ]
+        ]
+    },
+    {
+        "id": "0640f335f9490d05",
+        "type": "function",
+        "z": "9eb2bb2f23cb3479",
+        "name": "format payload",
+        "func": "const formatDate = (date) => {\n    const d = new Date(date);\n    return d.toLocaleString();\n}\n\nconst getFormatedDevice = ({dev_eui, received_at}) => {\n    return {\n        dev_eui,\n        received_at: formatDate(received_at)\n    }\n};\n\nmsg.devices = msg.payload?.map(getFormatedDevice);\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 860,
+        "y": 540,
+        "wires": [
+            [
+                "6b77450624591411"
+            ]
+        ]
+    },
+    {
+        "id": "e01c8de9c92fb49c",
+        "type": "function",
+        "z": "9eb2bb2f23cb3479",
+        "name": "Get last device entry",
+        "func": "msg.topic = \"SELECT * FROM `hive_payloads` WHERE `dev_eui` = :dev_eui ORDER BY `received_at` DESC\";\n\nmsg.payload = {\n    dev_eui: msg.req.params.device\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 480,
+        "y": 700,
+        "wires": [
+            [
+                "a13de40eac2ac15b"
+            ]
+        ]
+    },
+    {
+        "id": "a13de40eac2ac15b",
+        "type": "mysql",
+        "z": "9eb2bb2f23cb3479",
+        "mydb": "d835550709e60d14",
+        "name": "hive_db",
+        "x": 720,
+        "y": 700,
+        "wires": [
+            [
+                "0ba5a7af86135ce3"
+            ]
+        ]
+    },
+    {
+        "id": "0ba5a7af86135ce3",
+        "type": "function",
+        "z": "9eb2bb2f23cb3479",
+        "name": "format payload",
+        "func": "const formatDate = (date) => {\n    const d = new Date(date);\n    return d.toLocaleString();\n}\n\nconst getFormatedDevice = (device) => {\n    return {\n        ...device,\n        received_at: formatDate(device.received_at)\n    }\n};\n\nmsg.device =  msg.payload.length\n    ? getFormatedDevice(msg.payload[0])\n    : null;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 920,
+        "y": 700,
+        "wires": [
+            [
+                "38cf3219b946abd4"
+            ]
+        ]
+    },
+    {
+        "id": "38cf3219b946abd4",
+        "type": "switch",
+        "z": "9eb2bb2f23cb3479",
+        "name": "",
+        "property": "device",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "nempty"
+            },
+            {
+                "t": "null"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 1090,
+        "y": 700,
+        "wires": [
+            [
+                "1ea45368694a31a5"
+            ],
+            [
+                "527d601cd8523ede"
+            ]
+        ]
+    },
+    {
+        "id": "d9f5b0e4f0579792",
+        "type": "http response",
+        "z": "9eb2bb2f23cb3479",
+        "name": "",
+        "statusCode": "404",
+        "headers": {},
+        "x": 1580,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "527d601cd8523ede",
+        "type": "template",
+        "z": "9eb2bb2f23cb3479",
+        "name": "Not found page",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Not found <a href=\"/devices\">go back to devices</a>",
+        "output": "str",
+        "x": 1380,
+        "y": 780,
+        "wires": [
+            [
+                "d9f5b0e4f0579792"
             ]
         ]
     }
