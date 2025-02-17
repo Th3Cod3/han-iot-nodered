@@ -37,7 +37,7 @@
         "willMsg": {},
         "userProps": "",
         "sessionExpiry": "",
-        "info": "NNSXS.NALBTOCUGHULGNQMSR3UCILOAFJNYZMN46O7UPA.IDUOKZZOJ3CNXXBYONF6S5RW35WMQOK5F3R7XWPZAB3QXLZIPAVQ"
+        "info": "test-app-th3-cod3@ttn\nNNSXS.NALBTOCUGHULGNQMSR3UCILOAFJNYZMN46O7UPA.IDUOKZZOJ3CNXXBYONF6S5RW35WMQOK5F3R7XWPZAB3QXLZIPAVQ"
     },
     {
         "id": "d835550709e60d14",
@@ -58,6 +58,14 @@
         "hidden": false
     },
     {
+        "id": "8066acdf4dea3c72",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
         "id": "0eb6b8e2053703cb",
         "type": "ui_group",
         "name": "Status page",
@@ -69,14 +77,6 @@
         "className": ""
     },
     {
-        "id": "8066acdf4dea3c72",
-        "type": "ui_tab",
-        "name": "Home",
-        "icon": "dashboard",
-        "disabled": false,
-        "hidden": false
-    },
-    {
         "id": "7e4eeb9b87d47b8f",
         "type": "ui_group",
         "name": "Default",
@@ -86,6 +86,102 @@
         "width": "6",
         "collapse": false,
         "className": ""
+    },
+    {
+        "id": "e6f5e555fca52da0",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
     },
     {
         "id": "d80258456b0b2cb2",
@@ -100,8 +196,8 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 230,
-        "y": 100,
+        "x": 130,
+        "y": 400,
         "wires": [
             [
                 "b3be766cadc4cb3d"
@@ -109,31 +205,19 @@
         ]
     },
     {
-        "id": "c1789bc6bcb64247",
-        "type": "mysql",
-        "z": "9eb2bb2f23cb3479",
-        "mydb": "d835550709e60d14",
-        "name": "hive_db",
-        "x": 700,
-        "y": 100,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "b3be766cadc4cb3d",
         "type": "function",
         "z": "9eb2bb2f23cb3479",
         "name": "prepare insert query",
-        "func": "const { \n    orientationY: orientation_y,\n    orientationX: orientation_x,\n    weight,\n    activity\n} = msg.payload.uplink_message.decoded_payload;\n\nmsg.payload = {\n    dev_eui: msg.payload.end_device_ids.dev_eui,\n    orientation_y,\n    orientation_x,\n    weight,\n    activity,\n    received_at: new Date(msg.payload.received_at),\n}\n\nmsg.topic = [\n    \"INSERT INTO hive_payloads\",\n    \"(`dev_eui`, `orientation_y`, `orientation_x`, `weight`, `activity`, `received_at`)\",\n    \"VALUES\",\n    \"(:dev_eui, :orientation_y, :orientation_x, :weight, :activity, :received_at);\",\n].join(' ');\n\nmsg.id = 'ttn-up';\n\nreturn msg;",
+        "func": "const { \n    orientationY: orientation_y,\n    orientationX: orientation_x,\n    weight,\n    activity,\n    battery\n} = msg.payload.uplink_message.decoded_payload;\n\nmsg.payload = {\n    dev_eui: msg.payload.end_device_ids.dev_eui,\n    orientation_y,\n    orientation_x,\n    weight,\n    activity,\n    battery: battery / 255 * 100,\n    received_at: new Date(msg.payload.received_at),\n}\n\nmsg.topic = [\n    \"INSERT INTO hive_payloads\",\n    \"(`dev_eui`, `orientation_y`, `orientation_x`, `weight`, `activity`, `battery`, `received_at`)\",\n    \"VALUES\",\n    \"(:dev_eui, :orientation_y, :orientation_x, :weight, :activity, :battery, :received_at);\",\n].join(' ');\n\nmsg.id = 'ttn-up';\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 480,
-        "y": 100,
+        "x": 400,
+        "y": 400,
         "wires": [
             [
                 "c1789bc6bcb64247"
@@ -155,10 +239,10 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "{\"end_device_ids\":{\"device_id\":\"han-device\",\"application_ids\":{\"application_id\":\"test-app-th3-cod3\"},\"dev_eui\":\"70B3D57ED006B0D7\",\"join_eui\":\"0004A30B001FCC24\",\"dev_addr\":\"260B2833\"},\"correlation_ids\":[\"gs:uplink:01JGVX1Z6X6GC77RDPQTJWN7B1\"],\"received_at\":\"2025-01-05T18:53:50.890713730Z\",\"uplink_message\":{\"session_key_id\":\"AZQ3wxNiBeqT38pZtsoASA==\",\"f_port\":1,\"f_cnt\":1,\"frm_payload\":\"CeQAEFlW\",\"decoded_payload\":{\"activity\":25,\"checksum\":86,\"orientationX\":0,\"orientationY\":121,\"payloadId\":1,\"weight\":13},\"rx_metadata\":[{\"gateway_ids\":{\"gateway_id\":\"han-ese-ttig-19\",\"eui\":\"58A0CBFFFE80221E\"},\"time\":\"2025-01-05T18:53:50.542771100Z\",\"timestamp\":2865301308,\"rssi\":-49,\"channel_rssi\":-49,\"snr\":9.25,\"uplink_token\":\"Ch0KGwoPaGFuLWVzZS10dGlnLTE5EghYoMv//oAiHhC8jqTWChoMCL6q67sGEKr96sYCIOCEkYqyoBE=\",\"received_at\":\"2025-01-05T18:53:50.639478520Z\"}],\"settings\":{\"data_rate\":{\"lora\":{\"bandwidth\":125000,\"spreading_factor\":7,\"coding_rate\":\"4/5\"}},\"frequency\":\"867900000\",\"timestamp\":2865301308,\"time\":\"2025-01-05T18:53:50.542771100Z\"},\"received_at\":\"2025-01-05T18:53:50.686505463Z\",\"consumed_airtime\":\"0.051456s\",\"network_ids\":{\"net_id\":\"000013\",\"ns_id\":\"EC656E0000000181\",\"tenant_id\":\"ttn\",\"cluster_id\":\"eu1\",\"cluster_address\":\"eu1.cloud.thethings.network\"}}}",
+        "payload": "{\"end_device_ids\":{\"device_id\":\"han-device\",\"application_ids\":{\"application_id\":\"test-app-th3-cod3\"},\"dev_eui\":\"70B3D57ED006B0D7\",\"join_eui\":\"0004A30B001FCC24\",\"dev_addr\":\"260B2833\"},\"correlation_ids\":[\"gs:uplink:01JGVX1Z6X6GC77RDPQTJWN7B1\"],\"received_at\":\"2025-01-05T18:53:50.890713730Z\",\"uplink_message\":{\"session_key_id\":\"AZQ3wxNiBeqT38pZtsoASA==\",\"f_port\":1,\"f_cnt\":1,\"frm_payload\":\"CeQAEFlW\",\"decoded_payload\":{\"activity\":25,\"battery\":200,\"checksum\":86,\"orientationX\":0,\"orientationY\":121,\"payloadId\":1,\"weight\":13},\"rx_metadata\":[{\"gateway_ids\":{\"gateway_id\":\"han-ese-ttig-19\",\"eui\":\"58A0CBFFFE80221E\"},\"time\":\"2025-01-05T18:53:50.542771100Z\",\"timestamp\":2865301308,\"rssi\":-49,\"channel_rssi\":-49,\"snr\":9.25,\"uplink_token\":\"Ch0KGwoPaGFuLWVzZS10dGlnLTE5EghYoMv//oAiHhC8jqTWChoMCL6q67sGEKr96sYCIOCEkYqyoBE=\",\"received_at\":\"2025-01-05T18:53:50.639478520Z\"}],\"settings\":{\"data_rate\":{\"lora\":{\"bandwidth\":125000,\"spreading_factor\":7,\"coding_rate\":\"4/5\"}},\"frequency\":\"867900000\",\"timestamp\":2865301308,\"time\":\"2025-01-05T18:53:50.542771100Z\"},\"received_at\":\"2025-01-05T18:53:50.686505463Z\",\"consumed_airtime\":\"0.051456s\",\"network_ids\":{\"net_id\":\"000013\",\"ns_id\":\"EC656E0000000181\",\"tenant_id\":\"ttn\",\"cluster_id\":\"eu1\",\"cluster_address\":\"eu1.cloud.thethings.network\"}}}",
         "payloadType": "json",
-        "x": 210,
-        "y": 180,
+        "x": 150,
+        "y": 480,
         "wires": [
             [
                 "b3be766cadc4cb3d"
@@ -172,7 +256,7 @@
         "name": "",
         "statusCode": "200",
         "headers": {},
-        "x": 1540,
+        "x": 1500,
         "y": 540,
         "wires": []
     },
@@ -185,9 +269,9 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "<html>\n\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <link\n      href=\"https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css\"\n      rel=\"stylesheet\"\n    />\n    <script\n      src=\"https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js\"\n    ></script>\n  </head>\n\n  <body>\n    <div class=\"container mx-auto p-4\">\n      <h1 class=\"text-2xl font-bold text-gray-800 dark:text-white\">\n        Device {{ device.dev_eui }}\n      </h1>\n\n      <div class=\"relative overflow-x-auto\">\n        <h2>\n          Last data from device at: {{ device.received_at }}\n        </h2>\n        <div class=\"p-4 bg-white rounded-lg md:p-8 dark:bg-gray-800\" id=\"stats\" role=\"tabpanel\" aria-labelledby=\"stats-tab\">\n            <dl class=\"grid max-w-screen-xl grid-cols-2 gap-8 p-4 mx-auto text-gray-900 sm:grid-cols-3 xl:grid-cols-6 dark:text-white sm:p-8\">\n                <div class=\"flex flex-col items-center justify-center\">\n                    <dt class=\"mb-2 text-3xl font-extrabold\">{{ device.orientation_y }}</dt>\n                    <dd class=\"text-gray-500 dark:text-gray-400\">Orientation Y</dd>\n                </div>\n                <div class=\"flex flex-col items-center justify-center\">\n                    <dt class=\"mb-2 text-3xl font-extrabold\">{{ device.orientation_x }}</dt>\n                    <dd class=\"text-gray-500 dark:text-gray-400\">Orientation X</dd>\n                </div>\n                <div class=\"flex flex-col items-center justify-center\">\n                    <dt class=\"mb-2 text-3xl font-extrabold\">{{ device.weight }} kg</dt>\n                    <dd class=\"text-gray-500 dark:text-gray-400\">Weight</dd>\n                </div>\n                <div class=\"flex flex-col items-center justify-center\">\n                    <dt class=\"mb-2 text-3xl font-extrabold\">{{ device.activity }}</dt>\n                    <dd class=\"text-gray-500 dark:text-gray-400\">Activity</dd>\n                </div>\n            </dl>\n        </div>\n      </div>\n    </div>\n  </body>\n</html>",
+        "template": "<html>\n\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <link\n      href=\"https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css\"\n      rel=\"stylesheet\"\n    />\n    <script\n      src=\"https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js\"\n    ></script>\n  </head>\n\n  <body>\n    <div class=\"container mx-auto p-4\">\n      <h1 class=\"text-2xl font-bold text-gray-800 dark:text-white\">\n        Device {{ device.dev_eui }}\n      </h1>\n\n      <div class=\"relative overflow-x-auto\">\n        <h2>\n          Last data from device at: {{ device.received_at }}\n        </h2>\n        <div class=\"p-4 bg-white rounded-lg md:p-8 dark:bg-gray-800\" id=\"stats\" role=\"tabpanel\" aria-labelledby=\"stats-tab\">\n            <dl class=\"grid max-w-screen-xl grid-cols-5 gap-8 p-4 mx-auto text-gray-900 sm:grid-cols-3 xl:grid-cols-6 dark:text-white sm:p-8\">\n                <div class=\"flex flex-col items-center justify-center\">\n                    <dt class=\"mb-2 text-3xl font-extrabold\">{{ device.orientation_y }}</dt>\n                    <dd class=\"text-gray-500 dark:text-gray-400\">Orientation Y</dd>\n                </div>\n                <div class=\"flex flex-col items-center justify-center\">\n                    <dt class=\"mb-2 text-3xl font-extrabold\">{{ device.orientation_x }}</dt>\n                    <dd class=\"text-gray-500 dark:text-gray-400\">Orientation X</dd>\n                </div>\n                <div class=\"flex flex-col items-center justify-center\">\n                    <dt class=\"mb-2 text-3xl font-extrabold\">{{ device.weight }} kg</dt>\n                    <dd class=\"text-gray-500 dark:text-gray-400\">Weight</dd>\n                </div>\n                <div class=\"flex flex-col items-center justify-center\">\n                    <dt class=\"mb-2 text-3xl font-extrabold\">{{ device.activity }}</dt>\n                    <dd class=\"text-gray-500 dark:text-gray-400\">Activity</dd>\n                </div>\n                <div class=\"flex flex-col items-center justify-center\">\n                    <dt class=\"mb-2 text-3xl font-extrabold\">{{ device.battery }}</dt>\n                    <dd class=\"text-gray-500 dark:text-gray-400\">Battery</dd>\n                </div>\n            </dl>\n        </div>\n      </div>\n    </div>\n  </body>\n</html>",
         "output": "str",
-        "x": 1310,
+        "x": 1250,
         "y": 640,
         "wires": [
             [
@@ -229,20 +313,6 @@
         "wires": [
             [
                 "abfc49e702954b9d"
-            ]
-        ]
-    },
-    {
-        "id": "abfc49e702954b9d",
-        "type": "mysql",
-        "z": "9eb2bb2f23cb3479",
-        "mydb": "d835550709e60d14",
-        "name": "hive_db",
-        "x": 660,
-        "y": 540,
-        "wires": [
-            [
-                "0640f335f9490d05"
             ]
         ]
     },
@@ -314,25 +384,11 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 480,
+        "x": 400,
         "y": 700,
         "wires": [
             [
                 "a13de40eac2ac15b"
-            ]
-        ]
-    },
-    {
-        "id": "a13de40eac2ac15b",
-        "type": "mysql",
-        "z": "9eb2bb2f23cb3479",
-        "mydb": "d835550709e60d14",
-        "name": "hive_db",
-        "x": 720,
-        "y": 700,
-        "wires": [
-            [
-                "0ba5a7af86135ce3"
             ]
         ]
     },
@@ -348,7 +404,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 920,
+        "x": 860,
         "y": 700,
         "wires": [
             [
@@ -374,7 +430,7 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 1090,
+        "x": 1050,
         "y": 700,
         "wires": [
             [
@@ -392,8 +448,8 @@
         "name": "",
         "statusCode": "404",
         "headers": {},
-        "x": 1580,
-        "y": 780,
+        "x": 1500,
+        "y": 740,
         "wires": []
     },
     {
@@ -407,11 +463,51 @@
         "syntax": "mustache",
         "template": "Not found <a href=\"/devices\">go back to devices</a>",
         "output": "str",
-        "x": 1380,
-        "y": 780,
+        "x": 1280,
+        "y": 740,
         "wires": [
             [
                 "d9f5b0e4f0579792"
+            ]
+        ]
+    },
+    {
+        "id": "c1789bc6bcb64247",
+        "type": "mysql",
+        "z": "9eb2bb2f23cb3479",
+        "mydb": "d835550709e60d14",
+        "name": "hive_db",
+        "x": 660,
+        "y": 400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "abfc49e702954b9d",
+        "type": "mysql",
+        "z": "9eb2bb2f23cb3479",
+        "mydb": "d835550709e60d14",
+        "name": "hive_db",
+        "x": 660,
+        "y": 540,
+        "wires": [
+            [
+                "0640f335f9490d05"
+            ]
+        ]
+    },
+    {
+        "id": "a13de40eac2ac15b",
+        "type": "mysql",
+        "z": "9eb2bb2f23cb3479",
+        "mydb": "d835550709e60d14",
+        "name": "hive_db",
+        "x": 660,
+        "y": 700,
+        "wires": [
+            [
+                "0ba5a7af86135ce3"
             ]
         ]
     }
